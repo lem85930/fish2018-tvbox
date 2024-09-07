@@ -30,7 +30,7 @@ docker run时使用-e选项通过环境变量传参
 - num 多仓时可以指定下载前num个仓库源
 - timeout http请求超时，默认3s
 - signame url是单个线路时可以指定线路名(jar同名)，不指定随机生成
-- jar_suffix 指定spider字段jar包保存后缀名，默认`jar`，一些CDN不能禁止'jar'后缀，可以修改为txt、json、js、css、html
+- jar_suffix 指定spider字段jar包保存后缀名，默认`jar`，一些CDN禁止'jar'后缀，可以修改为`txt`、`json`、`js`、`css`、`html`
 - mirror 指定镜像cdn加速，默认mirror=6
   - mirror=1 https://cdn.jsdmirror.com/ 静态文件CDN，禁止缓存jar后缀(建议txt、json、js、css、html)，缓存后速度最快，但是同文件名缓存不会立即更新
   - mirror=2 https://jsd.onmicrosoft.cn/ 静态文件CDN，禁止缓存jar后缀(建议txt、json、js、css、html)，缓存后速度快，但是同文件名缓存不会立即更新
