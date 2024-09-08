@@ -1,9 +1,8 @@
 ## 当前仓库配置地址([fish2018/tvbox](https://github.com/fish2018/tvbox))
 ```bash
 https://mirror.ghproxy.com/https://raw.githubusercontent.com/fish2018/tvbox/master/all.json
-https://gcore.jsdelivr.net/gh/fish2018/tvbox/all.json
-https://cdn.jsdmirror.com/gh/fish2018/tvbox/all.json
-https://jsd.onmicrosoft.cn/gh/fish2018/tvbox/all.json
+https://raw.yzuu.cf/fish2018/tvbox/master/all.json
+https://fastly.jsdelivr.net/gh/fish2018/tvbox/all.json
 ```
 
 ## [tvbox_tools](https://hub.docker.com/r/2011820123/tvbox)
@@ -16,6 +15,7 @@ https://jsd.onmicrosoft.cn/gh/fish2018/tvbox/all.json
 - 移除名称中的emoj表情
 - 根据hash和文件大小去重线路
 - 为文件链接自动使用加速（支持多种加速）
+- 默认使用 https://githubfast.com 加速clone、push(push文件过大会限制)
 
 ## 使用方法：
 
@@ -31,13 +31,26 @@ docker run时使用-e选项通过环境变量传参
 - timeout http请求超时，默认3s
 - signame url是单个线路时可以指定线路名(jar同名)，不指定随机生成
 - jar_suffix 指定spider字段jar包保存后缀名，默认`jar`，一些CDN禁止'jar'后缀，可以修改为`txt`、`json`、`js`、`css`、`html`
-- mirror 指定镜像cdn加速，默认mirror=6
-  - mirror=1 https://cdn.jsdmirror.com/ 静态文件CDN，禁止缓存jar后缀(建议txt、json、js、css、html)，缓存后速度最快，但是同文件名缓存不会立即更新
-  - mirror=2 https://jsd.onmicrosoft.cn/ 静态文件CDN，禁止缓存jar后缀(建议txt、json、js、css、html)，缓存后速度快，但是同文件名缓存不会立即更新
-  - mirror=3 https://gcore.jsdelivr.net/ 静态文件CDN，禁止缓存jar后缀(建议txt、json、js、css、html)，缓存后速度快，缓存立即更新
-  - mirror=4 https://mirror.ghproxy.com/ 加速clone、push、静态文件CDN，缓存速度一般，缓存立即更新
-  - mirror=5 https://raw.yzuu.cf/ 加速clone、push速度非常快；静态文件CDN，缓存速度一般，缓存立即更新
-  - mirror=6 https://githubfast.com/ 仅用于加速clone、push速度最快，push文件过大会限制
+- mirror 指定镜像cdn加速，默认mirror=1
+  - gh1类型 https://raw.githubusercontent.com/fish2018/tvbox/master/all.json => https://xxxx/gh/fish2018/tvbox/all.json
+    - mirror=1 https://mirror.ghproxy.com/https://raw.githubusercontent.com
+    - mirror=2 https://gitdl.cn/https://raw.githubusercontent.com
+    - mirror=3 https://ghproxy.net/https://raw.githubusercontent.com
+    - mirror=4 https://github.moeyy.xyz/https://raw.githubusercontent.com
+    - mirror=5 https://gh-proxy.com/https://raw.githubusercontent.com
+    - mirror=6 https://ghproxy.cc/https://raw.githubusercontent.com
+    - mirror=7 https://raw.yzuu.cf 可加速clone、push速度非常快(限制低于50M)
+    - mirror=8 https://raw.nuaa.cf
+    - mirror=9 https://raw.kkgithub.com
+  - gh2类型(缓存不能及时更新，禁止缓存jar后缀，建议txt、json、js、css、html) https://raw.githubusercontent.com/fish2018/tvbox/master/all.json => https://xxxx/fish2018/tvbox/master/all.json
+    - mirror=21 https://fastly.jsdelivr.net
+    - mirror=22 https://jsd.onmicrosoft.cn
+    - mirror=23 https://gcore.jsdelivr.net
+    - mirror=24 https://cdn.jsdmirror.com
+    - mirror=25 https://cdn.jsdmirror.cn
+    - mirror=26 https://jsd.proxy.aks.moe
+    - mirror=27 https://jsdelivr.b-cdn.net
+    - mirror=28 https://jsdelivr.pai233.top
 
 #### Docker执行示例:
 首先在github.com上创建自己的代码仓库，推荐命名'tvbox'，其他仓库名需要指定参数repo
@@ -58,6 +71,7 @@ docker run --rm -e token=ghp_RSEEieuktNTSxxxxxxxxvSrQJsrBmJ0dAIZw -e username=fi
 ```
 
 ## 更新说明
+- V2.3版本 更新大量cdn支持；默认使用githubfast.com加速clone和push，失败切换hub.yzuu.cf
 - V2.2版本 支持通过jar_suffix参数修改jar包后缀
 - V2.1版本 支持多种镜像加速，通过mirror={num}指定；当mirror<4时自动设置/etc/hosts加速github.com，解决运行docker的本地网络不能访问github
 - V2.0版本 修复指定target生成指定`{target}`.json；支持多url下载，英文逗号分隔多个url，`?&signame={name}`指定单线路名，不指定会生成随机名。例子：url = 'http://肥猫.com?&signame=肥猫,http://www.饭太硬.com/tv/?&signame=饭太硬'
