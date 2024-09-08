@@ -64,7 +64,7 @@ docker run --rm  -e username=xxx -e token=xxx -e url='http://肥猫.com?&signame
 演示：
 
 ```
-docker run --rm -e repo=ol -e mirror=22 -e jar_suffix=css -e token=XXX -e username=fish2018 -e num=1 -e url='https://www.iyouhun.com/tv/0'  2011820123/tvbox
+docker run --rm -e repo=ol -e mirror=2 -e jar_suffix=css -e token=XXX -e username=fish2018 -e num=1 -e url='https://www.iyouhun.com/tv/0'  2011820123/tvbox
 
 >>>
 
