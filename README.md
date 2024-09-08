@@ -53,30 +53,22 @@ docker run时使用-e选项通过环境变量传参
     - mirror=28 https://jsdelivr.pai233.top
 
 #### Docker执行示例:
-首先在github.com上创建自己的代码仓库，推荐命名'tvbox'，其他仓库名需要指定参数repo
-
-```bash
-docker run --rm  -e username=xxx -e token=xxx -e url='xxx' 2011820123/tvbox
-```
-
-国内可以使用代理拉取镜像
-```bash
-docker run --rm  -e username=XXX -e token=XXX -e url='xxx' dockerproxy.com/2011820123/tvbox:latest
-```
-
+Docker镜像`2011820123/tvbox`，也可以使用代理拉取镜像`dockerproxy.com/2011820123/tvbox:latest`<br>
+首先在github.com上创建自己的代码仓库，推荐命名'tvbox'，其他仓库名需要指定参数repo<br>
 支持多url下载，英文逗号`,`分隔多个url，`?&signame={name}`指定单线路名，不指定会生成随机名，{target}.json以最后一个url为准。<br>
-例子：url = 'http://肥猫.com?&signame=肥猫,http://www.饭太硬.com/tv/?&signame=饭太硬'
+
+```bash
+docker run --rm  -e username=xxx -e token=xxx -e url='http://肥猫.com?&signame=肥猫,http://www.饭太硬.com/tv/?&signame=饭太硬' 2011820123/tvbox
 ```
-docker run --rm -e token=ghp_RSEEieuktNTSxxxxxxxxvSrQJsrBmJ0dAIZw -e username=fish2018 -e url='http://肥猫.com?&signame=肥猫,http://www.饭太硬.com/tv/?&signame=饭太硬' 2011820123/tvbox
-```
+
 演示：
 
 ```
-docker run --rm -e repo=box -e mirror=22 -e jar_suffix=js -e token=ghp_RSEEiXXX -e username=fish2018 -e num=1 -e url='https://www.iyouhun.com/tv/0'  2011820123/tvbox
+docker run --rm -e repo=ol -e mirror=22 -e jar_suffix=css -e token=XXX -e username=fish2018 -e num=1 -e url='https://www.iyouhun.com/tv/0'  2011820123/tvbox
 
 >>>
 
-开始克隆：git clone https://githubfast.com/fish2018/box.git
+开始克隆：git clone https://githubfast.com/fish2018/ol.git
 --------- 开始私有化在线接口 ----------
 当前url: https://www.iyouhun.com/tv/0
 【多仓】 🌹游魂主仓库🌹.json: https://xn--s6wu47g.u.nxog.top/nxog/ou1.php?b=游魂
@@ -97,7 +89,7 @@ docker run --rm -e repo=box -e mirror=22 -e jar_suffix=js -e token=ghp_RSEEiXXX 
 开始下载【线路】摸鱼: http://我不是.摸鱼儿.top
 开始下载【线路】老刘备: https://raw.liucn.cc/box/m.json
 开始下载【线路】香雅情: https://gh.con.sh/https://raw.githubusercontent.com/xyq254245/xyqonlinerule/main/XYQTVBox.json
-【线路】俊佬: http://home.jundie.top:81/top98.json 下载错误：HTTPConnectionPool(host='127.0.0.1', port=7897): Max retries exceeded with url: http://home.jundie.top:81/top98.json (Caused by ReadTimeoutError("HTTPConnectionPool(host='127.0.0.1', port=7897): Read timed out. (read timeout=3)"))
+开始下载【线路】俊佬: http://home.jundie.top:81/top98.json
 开始下载【线路】月光: https://gh.con.sh/https://raw.githubusercontent.com/guot55/yg/main/max.json
 开始下载【线路】巧技: http://cdn.qiaoji8.com/tvbox.json
 开始下载【线路】荷城茶秀: https://gh.con.sh/https://raw.githubusercontent.com/HeChengChaXiu/tvbox/main/hccx.json
@@ -109,13 +101,13 @@ docker run --rm -e repo=box -e mirror=22 -e jar_suffix=js -e token=ghp_RSEEiXXX 
 开始写入tvbox.json
 开始写入all.json
 --------- 完成私有化在线接口 ----------
-开始推送：git push https://githubfast.com/fish2018/box.git
-耗时: 85.8073959350586 秒
+开始推送：git push https://githubfast.com/fish2018/ol.git
+耗时: 176.29488706588745 秒
 
 #################影视仓APP配置接口########################
 
-https://jsd.onmicrosoft.cn/gh/fish2018/box/all.json
-https://jsd.onmicrosoft.cn/gh/fish2018/box/tvbox.json
+https://gitdl.cn/https://raw.githubusercontent.com/fish2018/ol/main/all.json
+https://gitdl.cn/https://raw.githubusercontent.com/fish2018/ol/main/tvbox.json
 
 ```
   
