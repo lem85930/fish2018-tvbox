@@ -33,7 +33,7 @@ docker run时使用-e选项通过环境变量传参
 - jar_suffix 指定spider字段jar包保存后缀名，默认`jar`，一些CDN禁止'jar'后缀，可以修改为`txt`、`json`、`js`、`css`、`html`
 - mirror 指定镜像cdn加速，默认mirror=1
   - gh1类型 https://raw.githubusercontent.com/fish2018/tvbox/master/all.json => https://xxxx/gh/fish2018/tvbox/all.json
-    - mirror=1 https://mirror.ghproxy.com/https://raw.githubusercontent.com
+    - mirror=1 https://ghp.ci/https://raw.githubusercontent.com
     - mirror=2 https://gitdl.cn/https://raw.githubusercontent.com
     - mirror=3 https://ghproxy.net/https://raw.githubusercontent.com
     - mirror=4 https://github.moeyy.xyz/https://raw.githubusercontent.com
@@ -42,6 +42,7 @@ docker run时使用-e选项通过环境变量传参
     - mirror=7 https://raw.yzuu.cf 可加速clone、push速度非常快(限制低于50M)
     - mirror=8 https://raw.nuaa.cf
     - mirror=9 https://raw.kkgithub.com
+    - mirror=10 https://gh.con.sh/https://raw.githubusercontent.com
   - gh2类型(缓存不能及时更新，禁止缓存jar后缀，建议txt、json、js、css、html) https://raw.githubusercontent.com/fish2018/tvbox/master/all.json => https://xxxx/fish2018/tvbox/master/all.json
     - mirror=21 https://fastly.jsdelivr.net
     - mirror=22 https://jsd.onmicrosoft.cn
@@ -113,6 +114,7 @@ https://gitdl.cn/https://raw.githubusercontent.com/fish2018/ol/main/tvbox.json
   
 
 ## 更新说明
+- V2.4版本 mirror=1 https://mirror.ghproxy.com变更为https://ghp.ci；增加mirror=10
 - V2.3版本 更新大量cdn支持；默认使用githubfast.com加速clone和push，失败切换hub.yzuu.cf
 - V2.2版本 支持通过jar_suffix参数修改jar包后缀
 - V2.1版本 支持多种镜像加速，通过mirror={num}指定；当mirror<4时自动设置/etc/hosts加速github.com，解决运行docker的本地网络不能访问github
