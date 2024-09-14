@@ -1,5 +1,5 @@
 {
-    "spider": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/fish2018/tvbox/master/jar/Guard-H.jar",
+    "spider": "https://gitdl.cn/https://raw.githubusercontent.com/fish2018/tvbox/master/jar/Guard-H.jar",
     "lives":[{"group":"redirect","channels":[{"name":"live","urls":["proxy://do=live&type=txt&ext="]}]}],
     "sites": [
         { "key": "(18+)环亚资源", "name": "(18+不错)环亚资源", "type": 0, "api": "http://wmcj8.com/inc/sapi.php?ac=videolist", "searchable": 1, "quickSearch": 1, "filterable": 0 },
@@ -77,7 +77,7 @@
         {"key":"*痴汉队长","name":"*痴汉队长","type":1,"api":"https://javcaptain.com/api.php/provide/vod/","searchable":0,"quickSearch":0},
         {"key":"*抖阴视频","name":"*抖阴视频","type":1,"api":"https://www.888dav.com/api.php/provide/vod/","searchable":0,"quickSearch":0},
         {"key":"*麻豆视频2","name":"*麻豆视频2","type":1,"api":"https://madouse.la/api.php/provide/vod/","searchable":0,"quickSearch":0},
-        {"key":"*91麻豆","name":"*91麻豆","type":1,"api":"https://md91.cc/api.php/provide/vod/","searchable":0,"quickSearch":0},
+        {"key":"*91麻豆","name":"*91麻豆","type":1,"api":"https://91md.me/api.php/provide/vod/","searchable":0,"quickSearch":0},
         {"key":"*爱操资源","name":"*爱操资源","type":1,"api":"https://aicaozy.com/api.php/provide/vod/","searchable":0,"quickSearch":0},
         {"key":"*浪潮资源","name":"*浪潮资源","type":1,"api":"http://langchaozy6.com/api.php/provide/vod/","searchable":0,"quickSearch":0},
         {"key":"*速播资源","name":"*速播资源","type":1,"api":"https://api.suboapi.com/api.php/provide/vod/","searchable":0,"quickSearch":0},
@@ -169,7 +169,7 @@
 {"key":"*痴汉队长","name":"*痴汉队长","type":1,"api":"https://javcaptain.com/api.php/provide/vod/","searchable":0,"quickSearch":0},
 {"key":"*抖阴视频","name":"*抖阴视频","type":1,"api":"https://www.888dav.com/api.php/provide/vod/","searchable":0,"quickSearch":0},
 {"key":"*麻豆视频2","name":"*麻豆视频2","type":1,"api":"https://madouse.la/api.php/provide/vod/","searchable":0,"quickSearch":0},
-{"key":"*91麻豆","name":"*91麻豆","type":1,"api":"https://md91.cc/api.php/provide/vod/","searchable":0,"quickSearch":0},
+{"key":"*91麻豆","name":"*91麻豆","type":1,"api":"https://91md.me/api.php/provide/vod/","searchable":0,"quickSearch":0},
 {"key":"*99资源吧","name":"*99资源吧","type":1,"api":"http://99zyba.com/api.php/provide/vod/","searchable":0,"quickSearch":0},
 {"key":"*爱操资源","name":"*爱操资源","type":1,"api":"https://aicaozy.com/api.php/provide/vod/","searchable":0,"quickSearch":0},
 {"key":"*浪潮资源","name":"*浪潮资源","type":1,"api":"http://langchaozy11.com/api.php/provide/vod/","searchable":0,"quickSearch":0},
@@ -228,7 +228,7 @@
       "key": "91md",
       "name": "91md",
       "type": 1,
-      "api": "https://md91.cc/api.php/provide/vod/from/mdm3u8/",
+      "api": "https://91md.me/api.php/provide/vod/from/mdm3u8/",
       "tag": "qb,tj,rm",
       "categories": []
     },
